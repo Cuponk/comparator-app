@@ -16,7 +16,6 @@
   "description": "### Background",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "browserslist": [
     "defaults"
   ],
@@ -27,6 +26,4 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
-
-  
 }

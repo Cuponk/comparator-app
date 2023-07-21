@@ -15,7 +15,7 @@
   \**********************/
 /***/ (function() {
 
-eval("let test = document.createElement(\"div\");\ndiv;\ndata = fetch();//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMiLCJuYW1lcyI6WyJ0ZXN0IiwiZG9jdW1lbnQiLCJjcmVhdGVFbGVtZW50IiwiZGl2IiwiZGF0YSIsImZldGNoIl0sInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9jb21wYXJhdG9yLWFwcC8uL3NyYy9pbmRleC5qcz9iNjM1Il0sInNvdXJjZXNDb250ZW50IjpbImxldCB0ZXN0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcbmRpdlxuZGF0YSA9IGZldGNoKCkiXSwibWFwcGluZ3MiOiJBQUFBLElBQUlBLElBQUksR0FBR0MsUUFBUSxDQUFDQyxhQUFhLENBQUMsS0FBSyxDQUFDO0FBQ3hDQyxHQUFHO0FBQ0hDLElBQUksR0FBR0MsS0FBSyxDQUFDLENBQUMifQ==\n//# sourceURL=webpack-internal:///./src/index.js\n");
+eval("console.log(fetch('https://statsapi.mlb.com/api/1.1/attendence?teamId=143&leadId=103%leagueListId=103'));//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMiLCJuYW1lcyI6WyJjb25zb2xlIiwibG9nIiwiZmV0Y2giXSwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsid2VicGFjazovL2NvbXBhcmF0b3ItYXBwLy4vc3JjL2luZGV4LmpzP2I2MzUiXSwic291cmNlc0NvbnRlbnQiOlsiXG5cbmNvbnNvbGUubG9nKGZldGNoKCdodHRwczovL3N0YXRzYXBpLm1sYi5jb20vYXBpLzEuMS9hdHRlbmRlbmNlP3RlYW1JZD0xNDMmbGVhZElkPTEwMyVsZWFndWVMaXN0SWQ9MTAzJykpOyJdLCJtYXBwaW5ncyI6IkFBRUFBLE9BQU8sQ0FBQ0MsR0FBRyxDQUFDQyxLQUFLLENBQUMsb0ZBQW9GLENBQUMsQ0FBQyJ9\n//# sourceURL=webpack-internal:///./src/index.js\n");
 
 /***/ }),
 
