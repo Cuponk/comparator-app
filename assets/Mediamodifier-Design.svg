@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
+<desc>Created with Fabric.js 5.2.4</desc>
+<defs>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
+<g transform="matrix(1 0 0 1 540 540)" id="04242f25-1abb-4008-bb70-a46c0b305e8b"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
+</g>
+<g transform="matrix(1 0 0 1 540 540)" id="969b8d9f-a079-4b53-8bce-350c745d1ae9"  >
+</g>
+<g transform="matrix(0.4 0 0 0.4 573.22 455.97)" id="ae7f6c15-4a96-4c0b-93fe-5e59364f0e36"  >
+<path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-480, 480)" d="M 215 -264 Q 266 -301 294 -359 Q 322 -417 322 -480 Q 322 -543 294 -601.5 Q 266 -660 215 -697 Q 177 -651 158.5 -595.5 Q 140 -540 140 -480 Q 140 -420 158.5 -365 Q 177 -310 215 -264 Z M 480 -140 Q 542 -140 598.5 -159.5 Q 655 -179 703 -220 Q 644 -268 611.5 -336.5 Q 579 -405 579 -480 Q 579 -555 611.5 -624 Q 644 -693 703 -741 Q 655 -781 598.5 -800.5 Q 542 -820 480 -820 Q 418 -820 361.5 -800.5 Q 305 -781 257 -741 Q 316 -693 349 -624 Q 382 -555 382 -480 Q 382 -405 349 -336.5 Q 316 -268 257 -220 Q 305 -179 361.5 -159.5 Q 418 -140 480 -140 Z M 746 -264 Q 784 -310 802 -365 Q 820 -420 820 -480 Q 820 -540 802 -595.5 Q 784 -651 746 -697 Q 695 -660 667 -601.5 Q 639 -543 639 -480 Q 639 -417 667 -359 Q 695 -301 746 -264 Z M 480 -480 Z M 480 -80 Q 398 -80 325 -111.5 Q 252 -143 197.5 -197.5 Q 143 -252 111.5 -325 Q 80 -398 80 -480 Q 80 -563 111.5 -635.5 Q 143 -708 197.5 -762.5 Q 252 -817 325 -848.5 Q 398 -880 480 -880 Q 563 -880 635.5 -848.5 Q 708 -817 762.5 -762.5 Q 817 -708 848.5 -635.5 Q 880 -563 880 -480 Q 880 -398 848.5 -325 Q 817 -252 762.5 -197.5 Q 708 -143 635.5 -111.5 Q 563 -80 480 -80 Z" stroke-linecap="round" />
+</g>
+<g transform="matrix(5.64 0 0 5.64 572.68 461.4)" style="" id="09c4bb60-9642-4f04-a15f-2e8f8a520d35"  >
+		<text xml:space="preserve" font-family="Lato" font-size="40" font-style="normal" font-weight="400" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-50.22" y="12.57" style="white-space: pre; ">&lt;       &gt;</tspan></text>
+</g>
+</svg>

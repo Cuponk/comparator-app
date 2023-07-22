@@ -1,0 +1,66 @@
+
+
+.header {
+    height: 125px;
+    background-color: #2e3440;
+    display: flex;
+    justify-content: space-between;
+}
+
+.head-left {
+    display: flex;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.logo {
+    padding-left: 15px;
+    padding-right: 20px;
+    height: 120px;
+    width: 120px;
+}
+
+.description {
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    color: white;
+    padding-right: 30px;
+}
+
+.footer {
+    height: 120px;
+    background-color: #2e3440;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+.usage {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.github {
+    position: absolute;
+    right: 15px;
+}
+
+.main {
+
+}
+
