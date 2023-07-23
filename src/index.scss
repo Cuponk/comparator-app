@@ -60,7 +60,115 @@ body {
     right: 15px;
 }
 
-.main {
-
+.details-1 {
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+.stats-main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.details-1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    align-items: center;
+}
+
+.det-text {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+.name-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #eceff4;
+    width: 210px;
+    height: 39px;
+    border-radius: 7px;
+    background: #5E81AC;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.bio-1 {
+    width: 210px;
+    height: 191px;
+    border-radius: 7px;
+    background: #5E81AC;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    margin-top: 20px;
+}
+
+.awards-1 {
+    width: 211px;
+    height: 159px;
+    border-radius: 7px;
+    background: #5E81AC;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    margin-top: 20px;
+}
+
+.stats-1 {
+    background-color: white;
+    width: 211px;
+    height: 460px;
+    border-radius: 7px;
+}
+
+.graph {
+    width: 460px;
+    height: 460px;
+    background-color: #2e3440;
+}
+
+.stats-2 {
+    background-color: white;
+    width: 211px;
+    height: 460px;
+    border-radius: 7px;
+}
+
+.name-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #eceff4;
+    width: 210px;
+    height: 39px;
+    border-radius: 7px;
+    background: #5E81AC;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.bio-2 {
+    width: 210px;
+    height: 191px;
+    border-radius: 7px;
+    background: #5E81AC;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    margin-top: 20px;
+}
+
+.awards-2 {
+    width: 211px;
+    height: 159px;
+    border-radius: 7px;
+    background: #5E81AC;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    margin-top: 20px;
+}
+
+.details-2 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    align-items: center;
+}
+
+
 
