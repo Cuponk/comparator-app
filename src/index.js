@@ -56,6 +56,42 @@ async function getHittingStats(id) {
     }
 }
 
+async function appendBatting(id) {
+    arr = await getTotalBatting(id);
+    document.querySelector('.stats-avg').textContent = calcAVG(arr[1], arr[0]).toFixed(3)
+    
+}
+
+
+async function getTotalBatting(id) {
+    let totals = []
+    const obj = await getHittingStats(id)
+    let ab = 0;
+    let hits = 0;
+    let doub = 0;
+    let trip = 0;
+    let hr = 0;
+    let sf = 0;
+    let bb = 0;
+    let rbi = 0;
+    obj.forEach((i) => {
+        ab += i.AB
+        hits += i.H
+        doub += i['2B']
+        trip += i['3B']
+        hr += i.HR
+        sf += i.SF
+        bb += i.BB
+        rbi += i.RBI
+    })
+    totals.push(ab, hits, doub, trip, hr, sf, bb, rbi);
+
+    return totals
+    
+}
+
+appendBatting('troutmi01');
+
 function calcAVG(hits, atBats) {
     return hits / atBats;
 }
@@ -76,7 +112,7 @@ function calcOPS(sing, doub, trip, hr, atBats, hits, walks, hbp, sacFly) {
     //     getHittingStats(id).then(res => console.log(res))
     // });
     
-// getHittingStats(currentPlayer).then(res => console.log(res));
+// getHittingStats('troutmi01').then(res => console.log(res));
 // fetch('../db/Batting.json')
 //     .then(res => res.json())
 //     .then(arr => {
