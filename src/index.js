@@ -20,15 +20,15 @@ async function getById(id) {
     }
 }
 
-async function getNameById(id) {
+async function getIdByName(name) {
     let res;
     try {
         const response = await fetch('../db/People.json')
         if (response.ok) {
             const arr = await response.json()
             arr.forEach(el => {
-                if (el.playerID === id) {
-                    res = el.nameFirst + ' ' + el.nameLast
+                if (el.nameFirst + ' ' + el.nameLast === name) {
+                    res = el.playerID;
                 }
             })
             return res
@@ -127,7 +127,7 @@ async function getPitchingTotals(id) {
     
 }
 
-getPitchingTotals('ohtansh01').then(res => console.log(res))
+// getPitchingTotals('ohtansh01').then(res => console.log(res))
 
 async function getAwards(id) {
     let res = [];
@@ -215,14 +215,14 @@ async function appendAwards(id, num) {
 }
 
 
-appendDetails('ohtansh01', 1);
-appendPitching('ohtansh01', 1)
-appendBatting('ohtansh01', 1);
-appendAwards('ohtansh01', 1);
-appendDetails('ruthba01', 2);
-appendPitching('ruthba01', 2)
-appendBatting('ruthba01', 2);
-appendAwards('ruthba01', 2);
+// appendDetails('ohtansh01', 1);
+// appendPitching('ohtansh01', 1)
+// appendBatting('ohtansh01', 1);
+// appendAwards('ohtansh01', 1);
+// appendDetails('ruthba01', 2);
+// appendPitching('ruthba01', 2)
+// appendBatting('ruthba01', 2);
+// appendAwards('ruthba01', 2);
 
 const button = document.querySelector('.toggle');
 
@@ -258,4 +258,22 @@ function calcERA(er, ip) {
 function calcWHIP(bb, hits, ip) {
     return (bb + hits) / ip;
 }
+
+
+let submit1 = document.getElementById('s-icon-1');
+let submit2 = document.getElementById('s-icon-2');
+let test1 = document.getElementById('s-text-1');
+let test2 = document.getElementById('s-text-2');
+
+submit1.addEventListener('click', () => search(test1.value, 1));
+submit2.addEventListener('click', () => search(test2.value, 2));
+
+async function search(val, num) {
+    let id = await getIdByName(val)
+    appendBatting(id, num);
+    appendDetails(id, num);
+    appendAwards(id, num);
+    appendPitching(id, num);
+}
+
 
