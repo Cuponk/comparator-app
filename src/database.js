@@ -262,7 +262,7 @@ async function chartL(id) {
     let yrCount = 0;
     obj.forEach((i) => {
         yrCount++;
-        filterStat.push({'year': yrCount, 'count': i.HR})
+        filterStat.push({'year': yrCount, 'count': i.L})
     });
     return filterStat;
 }
@@ -273,7 +273,7 @@ async function chartW(id) {
     let yrCount = 0;
     obj.forEach((i) => {
         yrCount++;
-        filterStat.push({'year': yrCount, 'count': utils.calcAVG(i.H, i.AB)})
+        filterStat.push({'year': yrCount, 'count': i.W})
     });
     return filterStat;
 }
@@ -295,7 +295,7 @@ async function chartERA(id) {
     let yrCount = 0;
     obj.forEach((i) => {
         yrCount++;
-        filterStat.push({'year': yrCount, 'count': utils.calcSLG(i.H, i['2B'], i['3B'], i.HR, i.AB) })
+        filterStat.push({'year': yrCount, 'count': utils.calcERA(i.ER, i.IPouts / 3)})
     });
     return filterStat;
 }
@@ -306,18 +306,18 @@ async function chartSO(id) {
     let yrCount = 0;
     obj.forEach((i) => {
         yrCount++;
-        filterStat.push({'year': yrCount, 'count': utils.calcOPS(i.H, i['2B'], i['3B'], i.HR, i.AB, i.H, i.BB, i.HBP, i.SF)})
+        filterStat.push({'year': yrCount, 'count': i.SO })
     });
     return filterStat;
 }
 
 async function chartIP(id) {
     let filterStat = []
-    const obj = await getHittingStats(id);
+    const obj = await getPitchingStats(id);
     let yrCount = 0;
     obj.forEach((i) => {
         yrCount++;
-        filterStat.push({'year': yrCount, 'count': i.RBI})
+        filterStat.push({'year': yrCount, 'count': i.IPouts / 3})
     });
     return filterStat;
 }
@@ -328,7 +328,7 @@ async function chartWHIP(id) {
     let yrCount = 0;
     obj.forEach((i) => {
         yrCount++;
-        filterStat.push({'year': yrCount, 'count': i.AB})
+        filterStat.push({'year': yrCount, 'count': utils.calcWHIP(i.BB, i.H, i.IPouts / 3)})
     });
     return filterStat;
 }
@@ -348,5 +348,12 @@ export {
     chartOBP,
     chartOPS,
     chartRBI,
-    chartSLG
+    chartSLG,
+    chartERA,
+    chartG,
+    chartIP,
+    chartL,
+    chartSO,
+    chartW,
+    chartWHIP
 };

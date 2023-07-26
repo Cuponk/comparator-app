@@ -1,5 +1,5 @@
 import Chart from "chart.js/auto";
-import { getIdByName, chartHR, chartAB, chartAVG, chartOBP, chartOPS, chartRBI, chartSLG } from "./database.js";
+import { getIdByName, chartHR, chartAB, chartAVG, chartOBP, chartOPS, chartRBI, chartSLG, chartERA, chartG, chartIP, chartL, chartSO, chartW, chartWHIP } from "./database.js";
 import {
     appendBatting,
     appendPitching,
@@ -133,6 +133,34 @@ ab.addEventListener('click', () => {
     chartBar(mainPlayer, chartAB)
 });
 
+w.addEventListener('click', () => {
+    chartBar(mainPlayer, chartW)
+});
+
+l.addEventListener('click', () => {
+    chartBar(mainPlayer, chartL)
+});
+
+g.addEventListener('click', () => {
+    chartBar(mainPlayer, chartG)
+});
+
+era.addEventListener('click', () => {
+    chartBar(mainPlayer, chartERA)
+});
+
+so.addEventListener('click', () => {
+    chartBar(mainPlayer, chartSO)
+});
+
+ip.addEventListener('click', () => {
+    chartBar(mainPlayer, chartIP)
+});
+
+whip.addEventListener('click', () => {
+    chartBar(mainPlayer, chartWHIP)
+});
+
 document.getElementById("toggle").addEventListener("click", () => {
     document.querySelector(".stats-1-list-batting").classList.toggle("hidden");
     document.querySelector(".stats-2-list-batting").classList.toggle("hidden");
@@ -140,14 +168,15 @@ document.getElementById("toggle").addEventListener("click", () => {
     document.querySelector(".stats-2-list-pitching").classList.toggle("hidden");
 });
 
-document.getElementById("graph-type").addEventListener("click", () => update('bar'));
+document.getElementById("graph-bar").addEventListener("click", () => update('bar'));
+document.getElementById("graph-line").addEventListener("click", () => update('line'));
+document.getElementById("graph-bubble").addEventListener("click", () => update('bubble'));
 
 function update(type) {
     chart.config.type = type;
     chart.update();
 };
 
-// getIdByName('Mike Trout').then(res => console.log(res));
 
 
 
