@@ -59,44 +59,114 @@
             </div>
             <div class="stats-1">
                 <ul class="stats-1-list-pitching hidden">
-                    <li class="stats-1-w"></li>
-                    <li class="stats-1-l"></li>
-                    <li class="stats-1-g"></li>
-                    <li class="stats-1-era"></li>
-                    <li class="stats-1-so"></li>
-                    <li class="stats-1-ip"></li>
-                    <li class="stats-1-whip"></li>
+                    <li class="stats-1-w">
+                        <p id="stats-1-w"></p>
+                        <label>
+                            <input name="stats-pitch" id="w" type="radio">
+                        </label>
+                    </li>
+                    <li class="stats-1-l">
+                        <p id="stats-1-l"></p>
+                        <label>
+                            <input name="stats-pitch" id="l" type="radio">
+                        </label>
+                    </li>
+                    <li class="stats-1-g">
+                        <p id="stats-1-g"></p>
+                        <label>
+                            <input name="stats-pitch" id="g" type="radio">
+                        </label>
+                    </li>
+                    <li class="stats-1-era">
+                        <p id="stats-1-era"></p>
+                        <label>
+                            <input name="stats-pitch" id="era" type="radio">
+                        </label>
+                    </li>
+                    <li class="stats-1-so">
+                        <p id="stats-1-so"></p>
+                        <label>
+                            <input name="stats-pitch" id="so" type="radio">
+                        </label>
+                    </li>
+                    <li class="stats-1-ip">
+                        <p id="stats-1-ip"></p>
+                        <label>
+                            <input name="stats-pitch" id="ip" type="radio">
+                        </label>
+                    </li>
+                    <li class="stats-1-whip">
+                        <p id="stats-1-whip"></p>
+                        <label>
+                            <input name="stats-pitch" id="whip" type="radio">
+                        </label>
+                    </li>
                 </ul>
                 <ul class="stats-1-list-batting">
-                    <li class="stats-1-avg"></li>
-                    <li class="stats-1-obp"></li>
-                    <li class="stats-1-slg"></li>
-                    <li class="stats-1-opb"></li>
-                    <li class="stats-1-hr"></li>
-                    <li class="stats-1-rbi"></li>
-                    <li class="stats-1-ab"></li>
+                    <li class="stats-1-avg">
+                        <p id="stats-1-avg"></p>
+                        <label>
+                            <input name="stats-hit" id="avg" type="radio">
+                        </label>
+                    </li>
+                    <li class="stats-1-obp">
+                        <p id="stats-1-obp"></p>
+                        <label>
+                            <input name="stats-hit" id="obp" type="radio">
+                        </label>
+                    </li>
+                    <li class="stats-1-slg">
+                        <p id="stats-1-slg"></p>
+                        <label>
+                            <input name="stats-hit" id="slg" type="radio">
+                        </label>
+                    </li>
+                    <li class="stats-1-ops">
+                        <p id="stats-1-ops"></p>
+                        <label>
+                            <input name="stats-hit" id="ops" type="radio">
+                        </label>
+                    </li>
+                    <li class="stats-1-hr">
+                        <p id="stats-1-hr"></p>
+                        <label>
+                            <input name="stats-hit" id="hr" type="radio">
+                        </label>
+                    </li>
+                    <li class="stats-1-rbi">
+                        <p id="stats-1-rbi"></p>
+                        <label>
+                            <input name="stats-hit" id="rbi" type="radio">
+                        </label>
+                    </li>
+                    <li class="stats-1-ab">
+                        <p id="stats-1-ab"></p>
+                        <label>
+                            <input name="stats-hit" id="ab" type="radio">
+                        </label>
+                    </li>
                 </ul>
             </div>
-            <div class="chart"><canvas id="chart"></canvas></div>
-            <script type="module" src="./dist/main.js"></script>
+            <div class="chart-div"><canvas id="chart"></canvas></div>
             <div class="stats-2">
                 <ul class="stats-2-list-pitching hidden">
-                    <li class="stats-2-w"></li>
-                    <li class="stats-2-l"></li>
-                    <li class="stats-2-g"></li>
-                    <li class="stats-2-era"></li>
-                    <li class="stats-2-so"></li>
-                    <li class="stats-2-ip"></li>
-                    <li class="stats-2-whip"></li>
+                    <li id="stats-2-w"></li>
+                    <li id="stats-2-l"></li>
+                    <li id="stats-2-g"></li>
+                    <li id="stats-2-era"></li>
+                    <li id="stats-2-so"></li>
+                    <li id="stats-2-ip"></li>
+                    <li id="stats-2-whip"></li>
                 </ul>
                 <ul class="stats-2-list-batting">
-                    <li class="stats-2-avg"></li>
-                    <li class="stats-2-obp"></li>
-                    <li class="stats-2-slg"></li>
-                    <li class="stats-2-opb"></li>
-                    <li class="stats-2-hr"></li>
-                    <li class="stats-2-rbi"></li>
-                    <li class="stats-2-ab"></li>
+                    <li id="stats-2-avg"></li>
+                    <li id="stats-2-obp"></li>
+                    <li id="stats-2-slg"></li>
+                    <li id="stats-2-ops"></li>
+                    <li id="stats-2-hr"></li>
+                    <li id="stats-2-rbi"></li>
+                    <li id="stats-2-ab"></li>
+                </ul>
             </div>
             <div class="details-2">
                 <span class="det-text">Player Details</span>
@@ -126,7 +196,7 @@
             </div>
         </div>
         <div class="options">
-            <button class="toggle"">Toggle</button>
+            <button id="toggle">Toggle</button>
         </div>
     </div>
     <div class="footer">

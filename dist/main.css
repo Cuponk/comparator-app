@@ -189,14 +189,33 @@ body {
   justify-content: center;
 }
 
-.stats-1-list-batting, .stats-2-list-batting, .stats-1-list-pitching, .stats-2-list-pitching {
+.stats-1-list-pitching, .stats-2-list-pitching {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  font-family: Arial, Helvetica, sans-serif;
 }
-.stats-1-list-batting > li, .stats-2-list-batting > li, .stats-1-list-pitching > li, .stats-2-list-pitching > li {
+.stats-1-list-pitching > li, .stats-2-list-pitching > li {
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 135px;
+  height: 30px;
+  background-color: #d9d9d9;
+  border-radius: 8px;
+}
+
+.stats-1-list-batting, .stats-2-list-batting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.stats-1-list-batting > li, .stats-2-list-batting > li {
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -207,7 +226,7 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .options {
@@ -224,7 +243,7 @@ body {
 .main {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 50px;
 }
 
 .search-bars {
@@ -256,6 +275,7 @@ body {
   color: #484848;
 }
 
-.chart {
-  width: 30%;
+.chart-div {
+  width: 450px;
+  height: 450px;
 }
