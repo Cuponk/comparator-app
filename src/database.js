@@ -54,7 +54,6 @@ async function getHittingStats(id) {
     }
 }
 
-// getHittingStats('ohtansh01').then(el => console.log(el))
 
 async function getTotalBatting(id) {
     let totals = [];
@@ -124,8 +123,7 @@ async function getPitchingTotals(id) {
     return totals;
 }
 
-// console.log('test')
-// getPitchingTotals('ohtansh01').then(res => console.log(res))
+
 
 async function getAwards(id) {
     let res = [];

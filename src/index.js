@@ -107,18 +107,6 @@ async function addData(id, callback) {
     chart.update();
 }
 
-let chartInit;
-
-function initializeChart(id, callback) {
-    chartInit = chartBar(id, callback);
-}
-
-async function addDataToChart(id, callback) {
-    await chartInit;
-    addData(id, callback);
-}
-
-
 hr.addEventListener('click', () => {
     chartBar(mainPlayer, chartHR)
 });
@@ -146,9 +134,7 @@ rbi.addEventListener('click', () => {
 ab.addEventListener('click', () => {
     chartBar(mainPlayer, chartAB)
 });
-// console.log(button)
 
-// const button = document.getElementById("toggle");
 document.getElementById("toggle").addEventListener("click", () => {
     document.querySelector(".stats-1-list-batting").classList.toggle("hidden");
     document.querySelector(".stats-2-list-batting").classList.toggle("hidden");
@@ -156,11 +142,6 @@ document.getElementById("toggle").addEventListener("click", () => {
     document.querySelector(".stats-2-list-pitching").classList.toggle("hidden");
 });
 
-
-
-
-// function test12() {
-// }
 
 
 
