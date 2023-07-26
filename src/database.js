@@ -3,7 +3,7 @@ import * as utils from './utils.js'
 async function getById(id) {
     let res;
     try {
-        const response = await fetch("../db/People.json");
+        const response = await fetch("https://cuponk.github.io/comparator-app/db/People.json");
         if (response.ok) {
             const arr = await response.json();
             arr.forEach((el) => {
@@ -23,7 +23,7 @@ async function getById(id) {
 async function getIdByName(name) {
     let res;
     try {
-        const response = await fetch("../db/People.json");
+        const response = await fetch("https://cuponk.github.io/comparator-app/db/People.json");
         if (response.ok) {
             const arr = await response.json();
             arr.forEach((el) => {
@@ -42,7 +42,7 @@ async function getIdByName(name) {
 
 async function getHittingStats(id) {
     try {
-        const response = await fetch("/db/Batting.json");
+        const response = await fetch("https://cuponk.github.io/comparator-app/db/Batting.json");
         if (response.ok) {
             const arr = await response.json();
             return arr.filter((el) => el.playerID === id);
@@ -85,7 +85,7 @@ async function getTotalBatting(id) {
 
 async function getPitchingStats(id) {
     try {
-        const response = await fetch("/db/Pitching.json");
+        const response = await fetch("https://cuponk.github.io/comparator-app/db/Pitching.json");
         if (response.ok) {
             const arr = await response.json();
             return arr.filter((el) => el.playerID === id);
@@ -129,7 +129,7 @@ async function getAwards(id) {
     let res = [];
     let obj = {};
     try {
-        const response = await fetch("/db/AwardsPlayers.json");
+        const response = await fetch("https://cuponk.github.io/comparator-app/db/AwardsPlayers.json");
         if (response.ok) {
             const arr = await response.json();
             arr.forEach((el) => {
@@ -152,7 +152,7 @@ async function getAwards(id) {
 async function getDetails(id) {
     let res = [];
     try {
-        const response = await fetch("/db/People.json");
+        const response = await fetch("https://cuponk.github.io/comparator-app/db/People.json");
         if (response.ok) {
             const arr = await response.json();
             arr.forEach((el) => {
@@ -248,6 +248,83 @@ async function chartRBI(id) {
 async function chartAB(id) {
     let filterStat = []
     const obj = await getHittingStats(id);
+    let yrCount = 0;
+    obj.forEach((i) => {
+        yrCount++;
+        filterStat.push({'year': yrCount, 'count': i.AB})
+    });
+    return filterStat;
+}
+
+async function chartL(id) {
+    let filterStat = []
+    const obj = await getPitchingStats(id);
+    let yrCount = 0;
+    obj.forEach((i) => {
+        yrCount++;
+        filterStat.push({'year': yrCount, 'count': i.HR})
+    });
+    return filterStat;
+}
+
+async function chartW(id) {
+    let filterStat = []
+    const obj = await getPitchingStats(id);
+    let yrCount = 0;
+    obj.forEach((i) => {
+        yrCount++;
+        filterStat.push({'year': yrCount, 'count': utils.calcAVG(i.H, i.AB)})
+    });
+    return filterStat;
+}
+
+async function chartG(id) {
+    let filterStat = []
+    const obj = await getPitchingStats(id);
+    let yrCount = 0;
+    obj.forEach((i) => {
+        yrCount++;
+        filterStat.push({'year': yrCount, 'count': i.G})
+    });
+    return filterStat;
+}
+
+async function chartERA(id) {
+    let filterStat = []
+    const obj = await getPitchingStats(id);
+    let yrCount = 0;
+    obj.forEach((i) => {
+        yrCount++;
+        filterStat.push({'year': yrCount, 'count': utils.calcSLG(i.H, i['2B'], i['3B'], i.HR, i.AB) })
+    });
+    return filterStat;
+}
+
+async function chartSO(id) {
+    let filterStat = []
+    const obj = await getPitchingStats(id);
+    let yrCount = 0;
+    obj.forEach((i) => {
+        yrCount++;
+        filterStat.push({'year': yrCount, 'count': utils.calcOPS(i.H, i['2B'], i['3B'], i.HR, i.AB, i.H, i.BB, i.HBP, i.SF)})
+    });
+    return filterStat;
+}
+
+async function chartIP(id) {
+    let filterStat = []
+    const obj = await getHittingStats(id);
+    let yrCount = 0;
+    obj.forEach((i) => {
+        yrCount++;
+        filterStat.push({'year': yrCount, 'count': i.RBI})
+    });
+    return filterStat;
+}
+
+async function chartWHIP(id) {
+    let filterStat = []
+    const obj = await getPitchingStats(id);
     let yrCount = 0;
     obj.forEach((i) => {
         yrCount++;

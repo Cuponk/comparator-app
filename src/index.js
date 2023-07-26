@@ -87,12 +87,10 @@ async function chartBar(id, callback) {
             ],
         },
     });
-
     if (updatePlayer) {
         await addData(updatePlayer, callback);
     }
 }
-
 
 async function addData(id, callback) {
     const data = await callback(id);
@@ -141,6 +139,16 @@ document.getElementById("toggle").addEventListener("click", () => {
     document.querySelector(".stats-1-list-pitching").classList.toggle("hidden");
     document.querySelector(".stats-2-list-pitching").classList.toggle("hidden");
 });
+
+document.getElementById("graph-type").addEventListener("click", () => update('bar'));
+
+function update(type) {
+    chart.config.type = type;
+    chart.update();
+};
+
+// getIdByName('Mike Trout').then(res => console.log(res));
+
 
 
 
