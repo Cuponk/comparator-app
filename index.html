@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/reset.css">
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js" defer></script>
-    <link rel="stylesheet" href="./src/reset.css">
+    
     <link rel="icon" type="image/x-icon" href="./assets/MdiBaseballDiamondOutline.ico">
     <title>Comparator</title>
 </head>
@@ -202,10 +203,11 @@
             </div>
         </div>
         <div class="options">
-            <div class="toggle-dic">
-                <input type="checkbox" id="toggle">Toggle</input>
+            <div class="toggle-main">
+                <span class="first">Hitting</span>
+                <input type="checkbox" id="toggle"></input>
+                <span class="pitching">Pitching</span>
             </div>
-
             <div class="radio">
                 <input class="radio-input" name="graph-type" id="graph-bar" type="radio">
                 <label for="graph-bar" class="radio-label">Bar Chart</label>
@@ -218,7 +220,11 @@
     </div>
     <div class="footer">
         <div class="usage">Data provided by Lahman Baseball Database</div>
-        <div class="github"><a href="https://github.com/Cuponk"><img src="./assets/icons8-github-48.png" alt=""></a>
+        <div class="linkedin-class">
+            <a href="https://www.linkedin.com/in/justin-aitken-bb9272212/"><img class="linkedin" src="./assets/linkedin-svgrepo-com.svg" alt=""></a>
+        </div>        
+        <div class="github">
+            <a href="https://github.com/Cuponk"><img class="linkedin" src="./assets/github-icon-1-logo-svgrepo-com.svg" alt=""></a>
         </div>
     </div>
 </body>

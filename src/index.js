@@ -40,11 +40,11 @@ async function searchResults(val, num) {
     const arr = await getResults(val)
     let str = '';
     arr.forEach((el) => {
-        str += `<li><button class='list-item-${val}'>` + el + `</button></li>`;
+        str += `<li><button class='list-item-${num}'>` + el + `</button></li>`;
     });
     document.querySelector(`.results-list-${num}`).innerHTML = str;
 
-    let listItems = document.querySelectorAll(`.list-item-${val}`);
+    let listItems = document.querySelectorAll(`.list-item-${num}`);
     listItems.forEach((listItem) => {
         listItem.addEventListener('click', () => search(listItem.textContent, num, chartAVG));
     });
@@ -116,6 +116,9 @@ async function chartBar(id, callback) {
 
 async function addData(id, callback) {
     const data = await callback(id);
+    if (chart.data.datasets > 1) {
+        chart.data.datasets.pop();
+    }
     let newData = {
         label: compareName,
         data: data.map((row) => row.count),

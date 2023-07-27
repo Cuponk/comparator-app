@@ -60,6 +60,11 @@ body {
     right: 15px;
 }
 
+.linkedin-class {
+    position: absolute;
+    right: 75px;
+}
+
 .details-1 {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -87,7 +92,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #eceff4;
     width: 210px;
-    height: 39px;
+    height: 30px;
     border-radius: 7px;
     background: #5E81AC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
@@ -95,7 +100,7 @@ body {
 
 .bio-1 {
     width: 210px;
-    height: 191px;
+    height: 180px;
     border-radius: 7px;
     background: #5E81AC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
@@ -108,31 +113,24 @@ body {
 
 .awards-1 {
     width: 211px;
-    height: 159px;
+    height: 150px;
     border-radius: 7px;
     background: #5E81AC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     margin-top: 20px;
 }
 
-.stats-1 {
+.stats-1, .stats-2 {
     background-color: white;
-    width: 211px;
-    height: 460px;
+    width: 200px;
+    height: 400px;
     border-radius: 7px;
 }
 
 .graph {
-    width: 460px;
-    height: 460px;
+    width: 410px;
+    height: 410px;
     background-color: #2e3440;
-}
-
-.stats-2 {
-    background-color: white;
-    width: 211px;
-    height: 460px;
-    border-radius: 7px;
 }
 
 .name-2 {
@@ -142,7 +140,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #eceff4;
     width: 210px;
-    height: 39px;
+    height: 30px;
     border-radius: 7px;
     background: #5E81AC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
@@ -150,7 +148,7 @@ body {
 
 .bio-2 {
     width: 210px;
-    height: 191px;
+    height: 180px;
     border-radius: 7px;
     background: #5E81AC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
@@ -159,7 +157,7 @@ body {
 
 .awards-2 {
     width: 211px;
-    height: 159px;
+    height: 150px;
     border-radius: 7px;
     background: #5E81AC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
@@ -228,12 +226,12 @@ body {
 }
 
 .hidden {
-    display: none !important;
+    display: none;
 }
 
 .options {
-    width: 1264px;
-    height: 120px;
+    width: 1100px;
+    height: 100px;
     border-radius: 11px;
     background: #5E81AC;
     display: flex;
@@ -252,12 +250,11 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding-bottom: 100px;
 }
 
 .search-1, .search-2 {
-    width: 466px;
-    height: 37px;
+    width: 400px;
+    height: 40px;
     border-radius: 15px;
     background: #FFF;
     display: flex;
@@ -269,11 +266,14 @@ body {
 #s-icon-1, #s-icon-2 {
     border: none;
     background-color: #FFF;
+    cursor: pointer;
 }
 
 #s-text-1, #s-text-2 {
+    background-color: #fff;
+    border-radius: 10px;
     border: none;
-    width: 350px;
+    width: 300px;
     height: 30px;
     font-family: Arial, Helvetica, sans-serif;
     color: #484848;
@@ -306,7 +306,7 @@ body {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     padding: 8px 14px;
     font-family: Arial, Helvetica, sans-serif;
-    transition: background 0.1s;
+    transition: background 0.2s;
 }
 
 .radio-label:not(:last-of-type) {
@@ -319,7 +319,6 @@ body {
 }
 
 
-
 .results-1, .results-2 {
     background: #D8DEE9;
     color: #D8DEE9;
@@ -329,14 +328,71 @@ body {
 .results-list-1, .results-list-2 {
     color: #D8DEE9;
     background-color: #D8DEE9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
 }
 
 ::-webkit-scrollbar {
-    width: 1em;
+    color: #D8DEE9;
+    background-color: #D8DEE9;
+    width: 0.75em;
+    border: none;
 }
 
 ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    color: #D8DEE9;
     background: #2e3440;
+    border: none;
+}
+
+::-webkit-scrollbar-corner {
+    color: #D8DEE9;
+}
+
+#toggle {
+    width: 149px;
+    height: 46px;
+    background: #d9d9d9;
+    cursor: pointer;
+    appearance: none;
+    border-radius: 23px;
+    position: relative;
+}
+
+#toggle:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 40px;
+    height: 40px;
+    background: #88C0D0;
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+#toggle:checked:before {
+    left: 106px;
+}
+
+.toggle-main {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.first, .pitching {
+    font-family:Arial, Helvetica, sans-serif;
+    color: #D8DEE9;
+}
+
+.list-item-1, .list-item-2 {
+    border: none;
+    border-radius: 8px;
 }
 
 

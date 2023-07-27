@@ -27,9 +27,9 @@ async function getResults(search) {
         if (response.ok) {
             const arr = await response.json();
             arr.filter(el => {
-                let temp = el.nameFirst + " " + el.nameLast
-                if (temp.includes(search)) {
-                    res.push(temp);
+                let temp = el.nameFirst.toLowerCase() + " " + el.nameLast.toLowerCase()
+                if (temp.includes(search.toLowerCase())) {
+                    res.push(el.nameFirst + " " + el.nameLast);
                 }
             });
             return res;
