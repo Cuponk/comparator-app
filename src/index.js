@@ -105,6 +105,9 @@ async function chartBar(id, callback) {
                 },
             ],
         },
+        options: {
+            maintainAspectRatio: false,
+        },
     });
     if (updatePlayer) {
         await addData(updatePlayer, callback);
@@ -120,7 +123,8 @@ async function addData(id, callback) {
         backgroundColor: '#FFB1C1',
     };
     chart.data.datasets.push(newData);
-    chart.data.labels = data.map((row) => 'Year: ' + row.year);
+    let newLabels = data.map((row) => 'Year: ' + row.year);
+    chart.data.labels = Array.from(new Set([...chart.data.labels, ...newLabels]));
     chart.update();
 }
 

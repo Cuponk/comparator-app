@@ -2,7 +2,7 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
 .header {
-  height: 125px;
+  height: 120px;
   background-color: #2e3440;
   display: flex;
   justify-content: space-between;
@@ -37,7 +37,7 @@
 }
 
 .footer {
-  height: 120px;
+  height: 110px;
   background-color: #2e3440;
   display: flex;
   justify-content: center;
@@ -101,6 +101,10 @@ body {
   background: #5E81AC;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
   margin-top: 20px;
+}
+
+.bio-1-list > li {
+  text-align: center;
 }
 
 .awards-1 {
@@ -196,6 +200,7 @@ body {
   justify-content: space-evenly;
 }
 .stats-1-list-pitching > li, .stats-2-list-pitching > li {
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   border: none;
   display: flex;
@@ -243,13 +248,14 @@ body {
 .main {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 10px;
 }
 
 .search-bars {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding-bottom: 100px;
 }
 
 .search-1, .search-2 {
@@ -276,8 +282,8 @@ body {
 }
 
 .chart-div {
-  width: 450px;
-  height: 450px;
+  width: 425px;
+  height: 425px;
 }
 
 .radio {
@@ -317,7 +323,7 @@ body {
 .results-1, .results-2 {
   background: #D8DEE9;
   color: #D8DEE9;
-  height: 200px;
+  height: 175px;
   overflow: scroll;
 }
 
@@ -327,7 +333,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 2em;
+  width: 1em;
 }
 
 ::-webkit-scrollbar-thumb {
