@@ -4,61 +4,105 @@
 
 This web app provides the user the ability to lookup and compare any two different seasons from any two different players in Major League Baseball. The user is able to pick any two players and view either the hitting or pitching statistics of these two players. The app also provides an interactive graph that the user can view and even change what type of graph they will see.
 
+[Link to App](https://cuponk.github.io/comparator-app/)
+
 ---
 
 ### Functionality & Features
 
 In Comparator, users will be able to:
 
-- Look up any current or past Major League Baseball Player
-- View the statistics of that player on a per season basis
-- Compare with another player of the users choosing
-- View the stats and comparisons on an interactive graph
-
-#### In addition, this project will include:
-- The abiltiy to select stats per season of any player
-- Use of an external database that is current and correct
+- Look up any current or past Major League Baseball Player and view their carrer pitching or hitting statistics
+- Compare that player to another player and see the comparison in 3 different chart options
 
 ---
 
-### Wireframe
+### Screenshot
 
-![wireframe](https://media.cleanshot.cloud/media/52999/hMP4PvfBp00t8HntVYuxCoGjzLZn8ceN2GqH9adW.jpeg?Expires=1689929871&Signature=lX2F57qevR6dq5KgkLHi~c5TFAjsXBMCPj0tzr44DS4G1NwYFHq7SK44jsjKtNNs7~10VU8bBJkiswLYAYjafp3hjwIkhK8-gmUm0QdtYpEo1IvhiSMr-s9u6WwM~3xYt2lWHoG0DXtHAr6k~Foik0imx7CU-T~lP7sAZiL4srnqVDx-ygAyNpRvsRv-1hSzU84s~HIzAwCiOXu7f~A9icwUNZ3tWXCtzgAWRh7rFZlJhcrc2Utr3r9ccMJWowLXdJTkESkkpZ1P3xaIxcEx1BfyM7ENP0uax23avTK19Coeym770P0ayyrCmUlKC8clDmYwJO0i~qZylS5ciTuSmw__&Key-Pair-Id=K269JMAT9ZF4GZ)
-
----
-
-### Potential Technologies, Libraries, and APIs
-
-- D3.js
-- Chart.js, depending on the database as d3.js has the ability to parse csv files)
-- MLB Stat Cast Api, need an account so might not be possible, but the easiest if I can get access to it)
-- The Lahman Baseabll database, as a primary backup, the two main drawbacks are 1. The database consists of csv files so I will have to figure out how to fetch that data, will probanly use D3.js, see above)
-- SportsRadar API, secondary backup if needed, still considering as a potential main option, the one drawback is that I might need to pay for it :(
-- Express, lightweight backend, if needed
+![screenshot](https://media.cleanshot.cloud/media/52999/A07D6SIEaeU1Wk79URXlqKcLYrawNKExRh2eictw.jpeg?Expires=1690504880&Signature=LP~GYAUgLv2~jvg51saPllJQVEsN9~C8-uHhNDKmmObcDZHD1a1bgaxdoc3bFi8kopDkclvr2ykDgQXJyuAXewMsrvDg8793YpXwyjR67xCfMVqXQSfV3fIEzs73y4jIwtvaG8JgjkcFkRjNV3oEvv8BMO76ijYClc58jIq6kudXffo84bIKbygZykmE9~BtD5lFar~a0Osn~2KRTyYgOq1sJf~lTvgVJWxLNX0Cy-fdHkbsSI~ZJE48B07M7-Zs-4NeFaxXqZVyKA9wBSeYZANqFtz4925yP1sQrjJ-pSo1PNvaC2cVQAGvmf9yiEp~oYLyMvkno~1MXVnZkYtoJA__&Key-Pair-Id=K269JMAT9ZF4GZ)
 
 ---
 
-### Implementation Timeline
+### Technologies, Libraries, and APIs
 
-- Friday Afternoon and Weekend
-  - finish initial project setup
-  - html, css, and js mockup and initial skeleton
-  - will not be final design, just want the main layout
-  - will start on database if time
-  - will try to not focus on fancy css
-- Monday
-    - database implementation
-    - the goal is to understand the database and be able to navigate through the db to get the data I want
-    - this will be the main goal before implementing that graph
-- Tuesday
-    - implement charts and graphs
-    - use and understand either d3.js or chart.js to make charts for the database
-    - add interactive features to change the type of graph
-    - this and the database will be the bulk of the project
-- Wednesday
-  - finish database and graph features
-  - after the main portion is done, add css elements to make it look better
-  - fix issues
-- Thursday Moring
-   - finishing touches and css
-   - fix issues
+- Chart.js
+
+- The Lahman Baseabll database
+
+---
+
+### Pitfalls
+  - The database was tough to use, as there is not that much detailed documentation and the tables are too large for anyone to look through then normally
+  - D3 js might have been a better choice because of the power that it has, however, chart.js was easy to use
+---
+
+### Code Snippets
+
+#### Search Function 
+```js
+  async function search(val, num, callback) {
+    compareName = undefined;
+    let id = await getIdByName(val);
+    num === 1 ? current1 = id : current2 = id;
+    appendBatting(id, num);
+    appendDetails(id, num);
+    appendAwards(id, num);
+    appendPitching(id, num);
+    if (num === 2) {
+        if (!current1) {
+            playerName = val;
+            mainPlayer = current2;
+            updatePlayer = current1;
+            chartBar(id, callback);
+        } else {
+            mainPlayer = current1;
+            updatePlayer = current2;
+            compareName = val;
+            addData(id, callback);
+        }
+    } else {
+        if (!current2) {
+            playerName = val;
+            mainPlayer = current1;
+            updatePlayer = current2;
+            chartBar(id, callback);
+        } else {
+            compareName = val;
+            mainPlayer = current2;
+            updatePlayer = current1;
+            addData(id, callback);
+        }
+    }
+}
+```
+
+#### Stat Calculations
+
+```js
+export function calcAVG(hits, atBats) {
+    return hits / atBats;
+}
+
+export function calcSLG(sing, doub, trip, hr, atBats) {
+    return (sing + doub * 2 + trip * 3 + hr * 4) / atBats;
+}
+
+export function calcOBP(hits, walks, hbp, sacFly, atBats) {
+    return (hits + walks + hbp) / (atBats + walks + hbp + sacFly);
+}
+
+export function calcOPS(sing, doub, trip, hr, atBats, hits, walks, hbp, sacFly) {
+    return (
+        calcSLG(sing, doub, trip, hr, atBats) +
+        calcOBP(hits, walks, hbp, sacFly, atBats)
+    );
+}
+
+export function calcERA(er, ip) {
+    return 9 * (er / ip);
+}
+
+export function calcWHIP(bb, hits, ip) {
+    return (bb + hits) / ip;
+}
+```
