@@ -1,5 +1,5 @@
 import Chart from "chart.js/auto";
-import { getIdByName, chartHR, chartAB, chartAVG, chartOBP, chartOPS, chartRBI, chartSLG, chartERA, chartG, chartIP, chartL, chartSO, chartW, chartWHIP } from "./database.js";
+import { getIdByName, chartHR, chartAB, chartAVG, chartOBP, chartOPS, chartRBI, chartSLG, chartERA, chartG, chartIP, chartL, chartSO, chartW, chartWHIP, getResults } from "./database.js";
 import {
     appendBatting,
     appendPitching,
@@ -18,8 +18,6 @@ let submit2 = document.getElementById("s-icon-2");
 let test1 = document.getElementById("s-text-1");
 let test2 = document.getElementById("s-text-2");
 
-submit1.addEventListener("click", () => search(test1.value, 1, chartAVG));
-submit2.addEventListener("click", () => search(test2.value, 2, chartAVG));
 
 const hr = document.getElementById('hr');
 const avg = document.getElementById('avg');
@@ -31,6 +29,27 @@ const ab = document.getElementById('ab');
 
 let playerName;
 let compareName;
+
+const resultsList1 = document.querySelector('.results-list-1');
+const resultsList2 = document.querySelector('.results-list-2');
+
+submit1.addEventListener("click", () => searchResults(test1.value, 1));
+submit2.addEventListener("click", () => searchResults(test2.value, 2));
+
+async function searchResults(val, num) {
+    const arr = await getResults(val)
+    let str = '';
+    arr.forEach((el) => {
+        str += `<li><button class='list-item-${val}'>` + el + `</button></li>`;
+    });
+    document.querySelector(`.results-list-${num}`).innerHTML = str;
+
+    let listItems = document.querySelectorAll(`.list-item-${val}`);
+    listItems.forEach((listItem) => {
+        listItem.addEventListener('click', () => search(listItem.textContent, num, chartAVG));
+    });
+}
+
 
 async function search(val, num, callback) {
     compareName = undefined;

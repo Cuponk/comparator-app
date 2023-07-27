@@ -20,6 +20,27 @@ async function getById(id) {
     }
 }
 
+async function getResults(search) {
+    let res = [];
+    try {
+        const response = await fetch("https://cuponk.github.io/comparator-app/db/People.json");
+        if (response.ok) {
+            const arr = await response.json();
+            arr.filter(el => {
+                let temp = el.nameFirst + " " + el.nameLast
+                if (temp.includes(search)) {
+                    res.push(temp);
+                }
+            });
+            return res;
+        } else {
+            throw response;
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 async function getIdByName(name) {
     let res;
     try {
@@ -355,5 +376,6 @@ export {
     chartL,
     chartSO,
     chartW,
-    chartWHIP
+    chartWHIP,
+    getResults
 };
