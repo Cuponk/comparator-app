@@ -6,12 +6,12 @@ import {
     appendDetails,
     appendAwards
 } from "./render.js";
-import { async } from "regenerator-runtime";
 
 let current2;
 let current1;
 let mainPlayer;
 let updatePlayer;
+let chartType = 'line';
 
 let submit1 = document.getElementById("s-icon-1");
 let submit2 = document.getElementById("s-icon-2");
@@ -86,44 +86,82 @@ async function search(val, num, callback) {
     }
 }
 
-let chart;
+let chart;  // Declare chart variable if not already declared
 
 async function chartBar(id, callback) {
     const data = await callback(id);
     if (chart) {
         chart.destroy();
     }
-    let chartEle = document.getElementById("chart")
-    chart = new Chart(chartEle, {
-        type: "line",
-        data: {
+
+    let chartEle = document.getElementById("chart");
+    let chartData;
+
+    if (chartType === 'bubble') {
+        chartData = {
+            datasets: [
+                {
+                    label: playerName,
+                    data: data.map((row) => ({
+                        x: row.year,
+                        y: row.count,
+                        r: 3,
+                    })),
+                },
+            ],
+        };
+    } else {
+        chartData = {
             labels: data.map((row) => 'Year: ' + row.year),
             datasets: [
                 {
-                    label:  playerName,
-                    data: data.map((row) => row.count)
+                    label: playerName,
+                    data: data.map((row) => row.count),
                 },
             ],
-        },
+        };
+    }
+
+    chart = new Chart(chartEle, {
+        type: chartType,
+        data: chartData,
         options: {
             maintainAspectRatio: false,
         },
     });
+
     if (updatePlayer) {
         await addData(updatePlayer, callback);
     }
 }
+
 
 async function addData(id, callback) {
     const data = await callback(id);
     if (chart.data.datasets > 1) {
         chart.data.datasets.pop();
     }
-    let newData = {
-        label: compareName,
-        data: data.map((row) => row.count),
-        borderColor: '#FF6384',
-        backgroundColor: '#FFB1C1',
+    
+    let newData
+
+    if (chartType === 'bubble') {
+        newData = {
+            label: compareName,
+            data: data.map((row) => ({
+                x: row.year,
+                y: row.count,
+                r: 3,
+            })),
+            borderColor: '#FF6384',
+            backgroundColor: '#FFB1C1',
+        }
+    } else {
+        newData = {
+            label: compareName,
+            data: data.map((row) => row.count),
+            borderColor: '#FF6384',
+            backgroundColor: '#FFB1C1',
+        }
     };
     chart.data.datasets.push(newData);
     let newLabels = data.map((row) => 'Year: ' + row.year);
@@ -194,9 +232,18 @@ document.getElementById("toggle").addEventListener("click", () => {
     document.querySelector(".stats-2-list-pitching").classList.toggle("hidden");
 });
 
-document.getElementById("graph-bar").addEventListener("click", () => update('bar'));
-document.getElementById("graph-line").addEventListener("click", () => update('line'));
-document.getElementById("graph-bubble").addEventListener("click", () => update('bubble'));
+document.getElementById("graph-bar").addEventListener("click", () => {
+    chartType = 'bar';
+    update(chartType)
+});
+document.getElementById("graph-line").addEventListener("click", () => {
+    chartType = 'line';
+    update(chartType)
+});
+document.getElementById("graph-bubble").addEventListener("click", () => {
+    chartType = 'bubble';
+    update(chartType)
+});
 
 function update(type) {
     chart.config.type = type;
