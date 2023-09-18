@@ -198,18 +198,47 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    > li {
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-        border: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 135px;
-        height: 30px;
-        background-color: #d9d9d9;
-        border-radius: 8px;
-    }
+}
+
+.stats-1-list-pitching label {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 135px;
+    height: 30px;
+    background-color: #d9d9d9;
+    border-radius: 8px;
+}
+
+.stats-1-list-pitching label input {
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.stats-1-list-pitching label span.radio-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.stats-1-list-pitching label input:checked + span.radio-content {
+    background-color: #88C0D0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
 .stats-1-list-batting, .stats-2-list-batting {
@@ -217,18 +246,49 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    > label {
-        font-family: Arial, Helvetica, sans-serif;
-        border: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 135px;
-        height: 30px;
-        background-color: #d9d9d9;
-        border-radius: 8px;
-    }
 }
+
+.stats-1-list-batting label {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 135px;
+    height: 30px;
+    background-color: #d9d9d9;
+    border-radius: 8px;
+}
+
+.stats-1-list-batting label input {
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.stats-1-list-batting label span.radio-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.stats-1-list-batting label input:checked + span.radio-content {
+    background-color: #88C0D0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
 
 .hidden {
     display: none;
