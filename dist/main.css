@@ -231,9 +231,6 @@ body {
   background-color: #d9d9d9;
   border-radius: 8px;
 }
-.stats-1-list-batting > label > input, .stats-2-list-batting > label > input {
-  opacity: 0;
-}
 
 .hidden {
   display: none;
